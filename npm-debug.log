@@ -1,0 +1,111 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish', '-f' ]
+2 info using npm@1.4.23
+3 info using node@v0.10.31
+4 warn using --force I sure hope you know what you are doing.
+5 verbose publish [ '.' ]
+6 verbose cache add [ '.', null ]
+7 verbose cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '.',
+8 verbose parsed url   path: '.',
+8 verbose parsed url   href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . /Users/mauricio/.npm/3a52ce78-.lock
+11 verbose tar pack [ '/Users/mauricio/.npm/node-argument-parser/0.0.1/package.tgz',
+11 verbose tar pack   '.' ]
+12 verbose tarball /Users/mauricio/.npm/node-argument-parser/0.0.1/package.tgz
+13 verbose folder .
+14 info prepublish node-argument-parser@0.0.1
+15 silly lockFile 1f1177db-tar tar://.
+16 verbose lock tar://. /Users/mauricio/.npm/1f1177db-tar.lock
+17 silly lockFile eae8f297-rgument-parser-0-0-1-package-tgz tar:///Users/mauricio/.npm/node-argument-parser/0.0.1/package.tgz
+18 verbose lock tar:///Users/mauricio/.npm/node-argument-parser/0.0.1/package.tgz /Users/mauricio/.npm/eae8f297-rgument-parser-0-0-1-package-tgz.lock
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 1f1177db-tar tar://.
+21 silly lockFile eae8f297-rgument-parser-0-0-1-package-tgz tar:///Users/mauricio/.npm/node-argument-parser/0.0.1/package.tgz
+22 silly lockFile eae8f297-rgument-parser-0-0-1-package-tgz tar:///Users/mauricio/.npm/node-argument-parser/0.0.1/package.tgz
+23 silly lockFile 858d0c15-de-argument-parser-0-0-1-package /Users/mauricio/.npm/node-argument-parser/0.0.1/package
+24 verbose lock /Users/mauricio/.npm/node-argument-parser/0.0.1/package /Users/mauricio/.npm/858d0c15-de-argument-parser-0-0-1-package.lock
+25 silly lockFile 858d0c15-de-argument-parser-0-0-1-package /Users/mauricio/.npm/node-argument-parser/0.0.1/package
+26 silly lockFile 858d0c15-de-argument-parser-0-0-1-package /Users/mauricio/.npm/node-argument-parser/0.0.1/package
+27 silly lockFile 3a52ce78- .
+28 silly lockFile 3a52ce78- .
+29 silly publish { name: 'node-argument-parser',
+29 silly publish   version: '0.0.1',
+29 silly publish   description: 'Simple argument parser for node js.',
+29 silly publish   main: 'index.js',
+29 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+29 silly publish   repository:
+29 silly publish    { type: 'git',
+29 silly publish      url: 'git://github.com/mauriciogior/node-argument-parser.git' },
+29 silly publish   keywords: [ 'process', 'argv', 'argument', 'parser' ],
+29 silly publish   author:
+29 silly publish    { name: 'Mauricio Giordano',
+29 silly publish      email: 'mauricio.c.giordano@gmail.com' },
+29 silly publish   licenses:
+29 silly publish    [ { url: 'https://github.com/mauriciogior/node-argument-parser/blob/master/LICENSE',
+29 silly publish        type: 'GPL v2' } ],
+29 silly publish   dependencies: { 'change-case': '2.1.5', 'json-cleaner': '1.0.0' },
+29 silly publish   bugs: { url: 'https://github.com/mauriciogior/node-argument-parser/issues' },
+29 silly publish   homepage: 'https://github.com/mauriciogior/node-argument-parser',
+29 silly publish   readme: '# Node Argument Parser\nQuick argument parser for Node.JS\n\n### Installation\n\n```shell\n$ npm install node-argument-parser -g\n```\n\n### Description\n\nv0.0.1\nFirst release\n\n## Quick Usage\n\nYou will need to create a file to place your configurations.\n\n**arguments.json**\n```json\n/* SAMPLE */\n\n{\n\t"arguments" : [\n\t\t{\n\t\t\t"full" : "file", // full version (e.g. --file)\n\t\t\t"short" : "f", // short version (e.g. -f)\n\t\t\t"value" : true, // expects value (e.g. --file input)\n\t\t\t"description" : "File for parse" // for help display\n\t\t},\n\t\t{\n\t\t\t"full" : "overwrite", // required\n\t\t\t"short" : "o", // required\n\t\t\t"description" : "Should overwrite changes?" // required (if has help)\n\t\t}\n\t],\n\t"defaults" : {\n\t\t"help" : true, // displays help on --help\n\t\t"helpExtras" : "Documentation can be fount at: http://foo.eu/" // extras (optional)\n\t}\n}\n```\n\nAfter that, you can start using it!\n\n**test.js**\n```javascript\nvar argumentParser = require("node-argument-parser");\n\nvar argv = argumentParser.parse("./arguments.json", process);\n\nconsole.log(argv);\n```\n\nNow you just need to test your application:\n```shell\n$ node test.js\n  { help: false, file: null, overwrite: false }\n\n$ node test.js --file input -o\n  { help: false, file: \'input\', overwrite: true }\n\n$ node test.js --help\n  Usage: node test.js [options argument]\n\n  Options:\n\n    -f, --file\t\tFile for parse (expects value)\n    -o, --overwrite\tShould overwrite changes?\n\n  Example:\n   node test.js --file sampleValue -o \n\n  Documentation can be fount at: http://foo.eu/\n```\n',
+29 silly publish   readmeFilename: 'README.md',
+29 silly publish   gitHead: 'b647f1760dc73c71cbd29abdae5026d062a13bde',
+29 silly publish   _id: 'node-argument-parser@0.0.1',
+29 silly publish   _shasum: '099dff6c1828934f7666acf4984402ba580fcc96',
+29 silly publish   _from: '.' }
+30 verbose request where is /node-argument-parser
+31 verbose request registry https://registry.npmjs.org/
+32 verbose request id 5a4f7d0b7418ccae
+33 verbose url raw /node-argument-parser
+34 verbose url resolving [ 'https://registry.npmjs.org/', './node-argument-parser' ]
+35 verbose url resolved https://registry.npmjs.org/node-argument-parser
+36 verbose request where is https://registry.npmjs.org/node-argument-parser
+37 info trying registry request attempt 1 at 05:11:30
+38 http PUT https://registry.npmjs.org/node-argument-parser
+39 http 403 https://registry.npmjs.org/node-argument-parser
+40 verbose headers { date: 'Sun, 05 Oct 2014 10:11:31 GMT',
+40 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+40 verbose headers   'content-type': 'application/json',
+40 verbose headers   'cache-control': 'max-age=60',
+40 verbose headers   'content-length': '5118',
+40 verbose headers   'accept-ranges': 'bytes',
+40 verbose headers   via: '1.1 varnish',
+40 verbose headers   'x-served-by': 'cache-dfw1834-DFW',
+40 verbose headers   'x-cache': 'MISS',
+40 verbose headers   'x-cache-hits': '0',
+40 verbose headers   'x-timer': 'S1412503891.149382,VS0,VE284',
+40 verbose headers   'keep-alive': 'timeout=10, max=50',
+40 verbose headers   connection: 'Keep-Alive' }
+41 error publish Failed PUT 403
+42 error Error: forbidden cannot modify pre-existing version: 0.0.1
+42 error old={"name":"node-argument-parser","version":"0.0.1","description":"Simple argument parser for node js.","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"repository":{"type":"git","url":"git://github.com/mauriciogior/node-scaffold.git"},"keywords":["process","argv","argument","parser"],"author":{"name":"Mauricio Giordano","email":"mauricio.c.giordano@gmail.com"},"licenses":[{"url":"https://github.com/mauriciogior/node-scaffold/blob/master/LICENSE","type":"GPL v2"}],"dependencies":{"change-case":"2.1.5","json-cleaner":"1.0.0"},"bugs":{"url":"https://github.com/mauriciogior/node-argument-parser/issues"},"homepage":"https://github.com/mauriciogior/node-argument-parser","gitHead":"85b8de3b98ec9e2fd0773682db41ce90d8ca61c5","_id":"node-argument-parser@0.0.1","_shasum":"85f68b844ef9ba282c75c6fa69b5d47d7cc6b39d","_from":".","_npmVersion":"1.4.23","_npmUser":{"name":"mauriciogior","email":"mauricio.c.giordano@gmail.com"},"maintainers":[{"name":"mauriciogior","email":"mauricio.c.giordano@gmail.com"}],"dist":{"shasum":"85f68b844ef9ba282c75c6fa69b5d47d7cc6b39d","tarball":"http://registry.npmjs.org/node-argument-parser/-/node-argument-parser-0.0.1.tgz"}}
+42 error new={"name":"node-argument-parser","version":"0.0.1","description":"Simple argument parser for node js.","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"repository":{"type":"git","url":"git://github.com/mauriciogior/node-argument-parser.git"},"keywords":["process","argv","argument","parser"],"author":{"name":"Mauricio Giordano","email":"mauricio.c.giordano@gmail.com"},"licenses":[{"url":"https://github.com/mauriciogior/node-argument-parser/blob/master/LICENSE","type":"GPL v2"}],"dependencies":{"change-case":"2.1.5","json-cleaner":"1.0.0"},"bugs":{"url":"https://github.com/mauriciogior/node-argument-parser/issues"},"homepage":"https://github.com/mauriciogior/node-argument-parser","readme":"# Node Argument Parser\u000aQuick argument parser for Node.JS\u000a\u000a### Installation\u000a\u000a```shell\u000a$ npm install node-argument-parser -g\u000a```\u000a\u000a### Description\u000a\u000av0.0.1\u000aFirst release\u000a\u000a## Quick Usage\u000a\u000aYou will need to create a file to place your configurations.\u000a\u000a**arguments.json**\u000a```json\u000a/* SAMPLE */\u000a\u000a{\u000a\u0009\"arguments\" : [\u000a\u0009\u0009{\u000a\u0009\u0009\u0009\"full\" : \"file\", // full version (e.g. --file)\u000a\u0009\u0009\u0009\"short\" : \"f\", // short version (e.g. -f)\u000a\u0009\u0009\u0009\"value\" : true, // expects value (e.g. --file input)\u000a\u0009\u0009\u0009\"description\" : \"File for parse\" // for help display\u000a\u0009\u0009},\u000a\u0009\u0009{\u000a\u0009\u0009\u0009\"full\" : \"overwrite\", // required\u000a\u0009\u0009\u0009\"short\" : \"o\", // required\u000a\u0009\u0009\u0009\"description\" : \"Should overwrite changes?\" // required (if has help)\u000a\u0009\u0009}\u000a\u0009],\u000a\u0009\"defaults\" : {\u000a\u0009\u0009\"help\" : true, // displays help on --help\u000a\u0009\u0009\"helpExtras\" : \"Documentation can be fount at: http://foo.eu/\" // extras (optional)\u000a\u0009}\u000a}\u000a```\u000a\u000aAfter that, you can start using it!\u000a\u000a**test.js**\u000a```javascript\u000avar argumentParser = require(\"node-argument-parser\");\u000a\u000avar argv = argumentParser.parse(\"./arguments.json\", process);\u000a\u000aconsole.log(argv);\u000a```\u000a\u000aNow you just need to test your application:\u000a```shell\u000a$ node test.js\u000a  { help: false, file: null, overwrite: false }\u000a\u000a$ node test.js --file input -o\u000a  { help: false, file: 'input', overwrite: true }\u000a\u000a$ node test.js --help\u000a  Usage: node test.js [options argument]\u000a\u000a  Options:\u000a\u000a    -f, --file\u0009\u0009File for parse (expects value)\u000a    -o, --overwrite\u0009Should overwrite changes?\u000a\u000a  Example:\u000a   node test.js --file sampleValue -o \u000a\u000a  Documentation can be fount at: http://foo.eu/\u000a```\u000a","readmeFilename":"README.md","gitHead":"b647f1760dc73c71cbd29abdae5026d062a13bde","_id":"node-argument-parser@0.0.1","_shasum":"099dff6c1828934f7666acf4984402ba580fcc96","_from":".","_npmVersion":"1.4.23","_npmUser":{"name":"mauriciogior","email":"mauricio.c.giordano@gmail.com"},"maintainers":[{"name":"mauriciogior","email":"mauricio.c.giordano@gmail.com"}],"dist":{"shasum":"099dff6c1828934f7666acf4984402ba580fcc96","tarball":"http://registry.npmjs.org/node-argument-parser/-/node-argument-parser-0.0.1.tgz"}}: node-argument-parser
+42 error     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:300:14)
+42 error     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:238:65)
+42 error     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:123:22)
+42 error     at Request.emit (events.js:98:17)
+42 error     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:893:14)
+42 error     at Request.emit (events.js:117:20)
+42 error     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:844:12)
+42 error     at IncomingMessage.emit (events.js:117:20)
+42 error     at _stream_readable.js:943:16
+42 error     at process._tickCallback (node.js:419:13)
+43 error If you need help, you may report this *entire* log,
+43 error including the npm and node versions, at:
+43 error     <http://github.com/npm/npm/issues>
+44 error System Darwin 13.3.0
+45 error command "/usr/local/bin/node" "/usr/local/bin/npm" "publish" "-f"
+46 error cwd /Users/mauricio/Development/Web/node-argument-parser
+47 error node -v v0.10.31
+48 error npm -v 1.4.23
+49 verbose exit [ 1, true ]

@@ -9,8 +9,8 @@ $ npm install node-argument-parser -g
 
 ### Description
 
-v0.0.1
-First release
+v0.0.2
+Fixed publish bug.
 
 ## Quick Usage
 
