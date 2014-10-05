@@ -1,0 +1,34 @@
+{
+	"name": "node-argument-parser",
+	"version": "0.0.1",
+	"description": "Simple argument parser for node js.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/mauriciogior/node-scaffold.git"
+	},
+	"keywords": [
+		"process",
+		"argv",
+		"argument",
+		"parser"
+	],
+	"author": "Mauricio Giordano <mauricio.c.giordano@gmail.com>",
+	"licenses": [
+		{
+			"url": "https://github.com/mauriciogior/node-scaffold/blob/master/LICENSE",
+			"type": "GPL v2"
+		}
+	],
+	"dependencies": {
+		"change-case": "2.1.5",
+		"json-cleaner": "1.0.0"
+	},
+	"bugs": {
+		"url": "https://github.com/mauriciogior/node-argument-parser/issues"
+	},
+	"homepage": "https://github.com/mauriciogior/node-argument-parser"
+}
