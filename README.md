@@ -36,7 +36,7 @@ You will need to create a file to place your configurations.
 	],
 	"defaults" : {
 		"help" : true, // displays help on --help
-		"helpExtras" : "Documentation can be fount at: http://foo.eu/" // extras (optional)
+		"helpExtras" : "Documentation can be found at: http://foo.eu/" // extras (optional)
 	}
 }
 ```
@@ -71,5 +71,5 @@ $ node test.js --help
   Example:
    node test.js --file sampleValue -o 
 
-  Documentation can be fount at: http://foo.eu/
+  Documentation can be found at: http://foo.eu/
 ```
